@@ -25,6 +25,6 @@ export class FlightResolver implements Resolve<Flight> {
   // Resolve<Flight> als Rückgabetyp angeben:
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Flight> {
     const id = route.params.id;
-    return this.flightService.findById(id); //.pipe(delay(7000));
+    return this.flightService.findById(id).pipe(delay(7000));
   }
 }
