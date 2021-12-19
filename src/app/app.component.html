@@ -1,0 +1,29 @@
+<!-- src/app/app.component.html -->
+
+<div class="wrapper">
+
+    <div class="sidebar" data-color="white" data-active-color="danger">
+        <app-sidebar-cmp></app-sidebar-cmp>
+    </div>
+
+    <div class="main-panel">
+        <app-navbar-cmp></app-navbar-cmp>
+
+        <div class="content">
+
+            <div class="loading-indicator" *ngIf="showWaitInfo">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+
+            <router-outlet></router-outlet>
+
+            <!-- Benannten Platzhalter hinzufügen: -->
+            <router-outlet name="aux"></router-outlet>
+
+        </div>
+    </div>
+
+</div>
